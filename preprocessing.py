@@ -14,8 +14,10 @@ def preprocessing(data_dir:json,save_path:json='data/processed_data.json')->json
             meta_data = meta_data_extractor(post_txt_data)
             post_meta_data = post | meta_data
             co_post_data.append(post_meta_data)
-    print(co_post_data)
-    
+    for epost in co_post_data:
+        print(epost)
+
+# Our meta data extractor takes help from llm to separate out the lines of interest from given text.
 def meta_data_extractor(text):
     return {
         'Num_lines':100,
